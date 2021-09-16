@@ -1,0 +1,7 @@
+package com.example.rest.controller;
+
+@RestCont
+public class ProductController 
+{
+
+}

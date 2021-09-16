@@ -1,0 +1,8 @@
+<html>
+<head>
+<title>Welcome to first page</title>
+</head>
+<body>
+<h2 th:text="${h}"></h2>
+</body><x</x>
+</html>

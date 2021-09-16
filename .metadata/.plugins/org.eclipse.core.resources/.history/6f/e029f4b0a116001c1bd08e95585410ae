@@ -1,0 +1,32 @@
+package com.example.rest.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.rest.entity.ProductEntity;
+
+@RestController
+public class ProductController 
+{
+	public Map<Integer, ProductEntity> map = new HashMap<>();
+	
+	@PostMapping("/product/add")
+	public ResponseEntity<?> addProduct(@RequestBody ProductEntity product)
+	{
+		map.put(product.getId(), product);
+		return ResponseEntity.ok().build();
+	}
+	
+	@GetMapping("/getproducts")
+	public ResponseEntity<?> getProduct()
+	{
+		return ResponseEntity.ok(map);
+	}
+	
+}
